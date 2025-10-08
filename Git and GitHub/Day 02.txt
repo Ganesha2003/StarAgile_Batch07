@@ -49,7 +49,7 @@ git diff <CommitID1>..<CommitID2>
 git diff is also used to see the changes b/w working tree and staging area
 
 git commit --amend -m "<NewCommitMessage>" ----> to change the latest commit
-git rebase -i HEAD~3
+git rebase -i HEAD~3 -------->To change the multiple commit messages
 
 647644c (HEAD -> master) pythononefile
 e7e0f15 added 4th line
@@ -58,6 +58,7 @@ e7e0f15 added 4th line
 
 
 git restore
+
 
 
 
