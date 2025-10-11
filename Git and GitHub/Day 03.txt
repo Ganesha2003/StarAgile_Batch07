@@ -3,13 +3,23 @@ If you want to recover a deleted file we will use git restore command
 Note: You should know which file was deleted
 
 Scenario 1: Deleted but not staged
+git restore <file_name>
+#it restores the deleted file when the change is not staged
 
 Scenario 2: Deleted and Staged for Commit
+step 1:
+git restore --staged <file_name>  # after execution of this command the file will be restore back to before staging area
+step 2:
+git restore <file_name> #The file gets restored back
 
 Scenario 3: Deleted, Staged and Committed
+git restore --source=<commit_id>  -- <file_name> #directly restores the deleted file
 
 Scenario 4: If you dont know the file name
-
+step 1:
+git log --diff-filter=D --summary #dispalys all the summary of all the files which were previously deleted
+step 2:
+git restore --source=<second_commit_id>  -- <file_name>
 
 => GIT STASH
 10.00 AM ----> TL ----> Assigned a task ----> Create file and write some code -----> 10.10 you started working on the task......Task is still going on
@@ -77,6 +87,7 @@ GIT PULL - git pull will pull only the changes that are available in the remote 
 => FORKING A REPO
 If you want to get the repo from one GitHub account to another GitHub account, then we can do fork
 When we do fork automatically the changes made by owner will automatically sync to your repo
+
 
 
 
