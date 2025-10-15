@@ -6,9 +6,10 @@
 
 => BRANCHES 
 
-git branch
-git branch <BranchName>
-git checkout <BranchName>
+git branch -->List the available branches
+git branch <BranchName> -->To Create a new branch
+git checkout <BranchName> -->Switching between different branches
+git push origin <branch_name> -->push the content from local to remote repo of that perticular branch
 
 Note: Whenever we swtich to a new branch (for the first time) from the exisiting branch, if there are any files in the existing branch, all those files will also be available in the new branch as well
 
@@ -36,6 +37,7 @@ Merge Vs Rebase
 Merge will show files, rebase will not show
 
 => Merge Conflict
+
 
 
 
