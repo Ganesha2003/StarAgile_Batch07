@@ -7,7 +7,7 @@
 => BRANCHES 
 
 git branch -->List the available branches
-git branch <BranchName> -->To Create a new branch
+git branch <BranchName> -->To Create a new branch (or) git checkout -b <new_branch_name> -->simultaniously creat and switch to new branch
 git checkout <BranchName> -->Switching between different branches
 git push origin <branch_name> -->push the content from local to remote repo of that perticular branch
 
@@ -21,6 +21,8 @@ To see the number of branches in local ----> git branch |wc -l
 To see the number of all branches (local and remote) ----> git branch -a |wc -l
 
 => .gitignore
+vi .gitignore --> the name of those file has to written which has to be ignored but not staged or committed
+git add * --> the git would not track this file if this file is sent to staging area using this command
 
 => To rename a branch ----> git branch -m <OldBranchName> <NewBranchName>
 
@@ -37,6 +39,7 @@ Merge Vs Rebase
 Merge will show files, rebase will not show
 
 => Merge Conflict
+
 
 
 
