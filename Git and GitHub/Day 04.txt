@@ -30,15 +30,17 @@ git add * --> the git would not track this file if this file is sent to staging 
 
 => To delete a branch ----> git branch -D <BranchName>
 
-=> Branch Merging from Local to Local
-
+=> Branch Merging from Local to Local -->git merge <branch_name> (it merges the present branch with the given branch)
 => GIT REBASE
 It is used to add files from one branch to another files
-
+git rebase <file_name> --> it merges the present branch with the given branch without showing the list of merged files
 Merge Vs Rebase
 Merge will show files, rebase will not show
 
+
+**** during checkout the changes between the same files in different branch are copied to the file which has difference.
 => Merge Conflict
+
 
 
 
