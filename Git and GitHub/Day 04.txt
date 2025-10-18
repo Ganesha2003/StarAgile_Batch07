@@ -29,6 +29,7 @@ git add * --> the git would not track this file if this file is sent to staging 
 => Pull request (Branch Merging) - Remote to Remote
 
 => To delete a branch ----> git branch -D <BranchName> #deletion of the branch is only posibbel if you are not in that branch
+git push origin:<branch_name>---> pushes the change of deleting a branch to gitHub
 
 => Branch Merging from Local to Local -->git merge <branch_name> (it merges the present branch with the given branch)
 => GIT REBASE
@@ -40,6 +41,7 @@ Merge will show files, rebase will not show
 
 **** during checkout the changes between the same files in different branch are copied to the file which has difference.
 => Merge Conflict
+
 
 
 
