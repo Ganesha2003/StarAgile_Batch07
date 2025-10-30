@@ -172,8 +172,8 @@ vi context.xml
 <Context antiResourceLocking="false" privileged="true" >
   <CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor"
                    sameSiteCookies="strict" />
-  <Valve className="org.apache.catalina.valves.RemoteCIDRValve"
-         allow=".*" />
+  <!--<Valve className="org.apache.catalina.valves.RemoteCIDRValve"
+         allow=".*" />-->
   <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
 </Context>
 
@@ -196,6 +196,7 @@ This is manual work
 We need to Automate the process of Build and Deployment - JENKINS
 Jenkins is Build and Deployment Automation Tool
 It is also called as CI&CD Tool
+
 
 
 
