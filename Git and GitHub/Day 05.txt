@@ -115,7 +115,7 @@ WHYYYY?????
 => Adding Collaborators to GitHub Repo
 
 => Git Cherry Pick
-
+git cherry pick <commit_id>
 
 
 
@@ -139,17 +139,54 @@ In order to deploy java based applications we will use Tomcat as the webserver
 
 To work with Tomcat, Java is required
 Tomcat is developed by using JPL
-
-https://tomcat.apache.org/download-90.cgi
-
 Default port number of Tomcat is 8080
-
+=============================================================================================
+Steps to setup the tomcat server
+Step 1:Install the java in the instance
 sudo dnf install java-17-amazon-corretto-devel -y
 
+step 2 : copy the tar folder from the official website (https://tomcat.apache.org/download-90.cgi) of the tomcat and get it into the instance using wget
+wget <tar_file url>
+
+step 3: Extract the tar file using the command
+tar -xvf <tar_file_name>
+
+[ THE MAIN DIRECTORIES IN THE TOMCAT ARE (BIN),(CONF) (WEBAPPS).
+**THE BIN WHICH IS A BINARY FILES CONSISTS OF SHELL FILES WHICH ARE USED TO START AND STOP THE TOMCAT SERVER IT IS STARTUP.SH AND SHUTDOWN.SH 
+**THE CONF CONSISTS OF TWO IMPORT FILES CALLED SERVER.XML(CONSIST OF TOMCAT CONNECTOR PORT) AND TOMCAT-USERS.XML(USED TO CONFIGURE USERNAME AND PASSWORD
+** THE WEBAPPS DIRECTORY-->MANAGER-->META-INF--CONTEXT.XML ]
+
+Step 4: Edit the context.xml file in the webapps directory
+
+vi context.xml
+#replace 
+<Context antiResourceLocking="false" privileged="true" >
+  <CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor"
+                   sameSiteCookies="strict" />
+  <Valve className="org.apache.catalina.valves.RemoteCIDRValve"
+         allow="127.0.0.0/8,::1/128" />
+  <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
+</Context>
+
+#with this
+<Context antiResourceLocking="false" privileged="true" >
+  <CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor"
+                   sameSiteCookies="strict" />
+  <Valve className="org.apache.catalina.valves.RemoteCIDRValve"
+         allow=".*" />
+  <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
+</Context>
+
+step 5: Go to tomcat-users.xml and change the file with
+vi tomcat-users.xml
+
+#and inside at last paste the below code
 <role rolename="manager-gui" />
 <user username="tomcat" password="tomcat" roles="manager-gui" />
 <role rolename="admin-gui" />  
 <user username="admin" password="admin" roles="manager-gui,admin-gui"/>
+
+step 6: save the changes and and deploy the war file generated
 
 
 Whenever developer makes the changes to the code, as a DevOps Engineer we have to build the code.
@@ -159,6 +196,7 @@ This is manual work
 We need to Automate the process of Build and Deployment - JENKINS
 Jenkins is Build and Deployment Automation Tool
 It is also called as CI&CD Tool
+
 
 
 
