@@ -128,6 +128,7 @@ Note: The default where the job information will be available is /var/lib/Jenkin
 Build Steps - Execute Shell 
 
 3. Lets say i have a file on EC2 Instance and i want Jenkins to run/execute that file
+bash /tmp/gan.sh
 
 4. Installing apache using Jenkins as a shell file
 sudo yum install httpd -y
@@ -161,7 +162,8 @@ Ex: Lets say i want only 2 builds to happen in 1 hour of time
 
 7. Integrate the Public GitHub Repo with Jenkins 
 
-8. Build the code available in Public Repo using Jenkins
+8. Build the code available in Public Repo using Jenkins and maven
+
 
 
 
