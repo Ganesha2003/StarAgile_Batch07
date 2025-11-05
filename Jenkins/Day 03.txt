@@ -37,6 +37,9 @@ How to establish the communication b/w Jenkins and S3 Service in AWS Cloud?
 September 3, 2025, 20:37:26
 September 3, 2025, 20:39:11
 
+process of storing
+Go to manage jenkins------>plugins--->Install S3 Publisher Plugin----->Create s3 bucket with enabling the versioning------>Create a role with s3 full access and attach it to the ec2 instance----->manage jenkins---->system---->s3 profiles----->configuring the job by adding the bucket name and region of that bucket 
+
 18. Recovering a Deleted Job - Jenkins Disaster Recovery
 DevOps Team ----> 3+ years candidates
 			 ----> Fresher ----> Deleted the Project/Job
@@ -48,6 +51,8 @@ Note: Whatever jobs that were created and built after installing the plugin, tho
 Additional Plugin: Thin Backup Plugin
 
 19. Email Notification
+manage jenkins---->system----->smtp server(smtp.gmail.com)----->Use SMTP Authentication(e mail address)----->password(go manage account in google account and in security type and search app password)----->smtp port(465)--->build and get email when the job failes
+
 
 20. Changing the Jenkins Port Number
 cd /usr/lib/systemd/system ----> jenkins.service ---> Edit the port number ----> Restart Jenkins ----> sudo systemctl restart jenkins
@@ -137,6 +142,7 @@ pipeline {
         }
     }
 }
+
 
 
 
