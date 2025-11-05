@@ -56,6 +56,7 @@ Poll SCM has a wait time
 11.  Build Periodically - GitHub Hook Trigger
 Here there is no wait time. 
 As soon as there is a change in the GitHub repo, Jenkins will identify the change and immediately it will trigger the job
+ex:- http://13.203.159.5:8080/github-webhook
 
 12.  Build Periodically - Build After Other Projects Are Built (Upstream and Downstream Jobs)
 The execution of the next job is dependent upon the execution of the present job
@@ -101,6 +102,7 @@ JENKINS_URL/job/trigger-remotely/build?token=TOKEN_NAME
 
 16. Jenkins Freestyle Project 
 https://github.com/KastroVKiran/tomcat-app-kastro.git
+
 
 
 
