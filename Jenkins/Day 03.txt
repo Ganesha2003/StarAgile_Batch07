@@ -137,11 +137,12 @@ pipeline {
         }
         stage('Tomcat Deployment') {
             steps {
-                sh 'sudo cp target/NETFLIX-1.2.2.war /root/apache-tomcat-9.0.108/webapps'
-            }
-        }
-    }
-}
+                sh 'sudo cp target/NETFLIX-1.2.2.war /root/apache-tomcat-9.0.108/webapps'-----------|
+            }                                                                                       |
+        }                                                                                           |-------have to edit sudoers file to                                                                                                      give jenkins copy permission therefore
+    }                                                                      sudo visudo----->allow root to run any command
+}                                                                          jenkins ALL=(ALL) NOPASSWD: /bin/cp
+
 
 
 
